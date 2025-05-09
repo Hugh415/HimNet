@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # HimNet
 Learning Hierarchical Interaction for Accurate Molecular Property Prediction
 =======
@@ -140,4 +139,3 @@ python main.py \
   --lr 0.0001 \
   --depth 7 \
   --seed 42
->>>>>>> master
