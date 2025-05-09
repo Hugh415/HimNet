@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-# HimNet
-Learning Hierarchical Interaction for Accurate Molecular Property Prediction
-=======
 # HimNet : Learning Molecular Hierarchical Interaction for Accurete Molecular Property Prediction
 
-Discovering molecules with desirable molecular properties, including ADMET (Absorption, Distribution, Metabolism, Excretion, and Toxicity) profiles, is of great importance in drug discovery. Existing approaches typically employ deep learning models, such as Graph Neural Networks (GNNs) and Transformers, to predict these molecular properties by learning from diverse chemical information. However, these models often fail to efficiently capture and utilize the hierarchical nature of molecular structures, and lack mechanisms for effective interaction among multi-level features. To address these limitations, we propose a _Hierarchical Interaction Message Passing Mechanism_, which serves as the foundation of our novel model, **HimNet**. Our method enables interaction-aware representation learning across atomic, motif, and molecular levels via hierarchical attention-guided message passing. This design allows HimNet to effectively balance global and local information, ensuring rich and task-relevant feature extraction for downstream property prediction tasks, such as Blood-Brain Barrier Permeability (BBBP). Extensive experiments on multiple benchmark datasets demonstrate that HimNet achieves the best or near-best performance in most molecular property prediction tasks. Furthermore, our method exhibits promising hierarchical interpretability, aligning well with chemical intuition on representative molecules. We believe that HimNet offers an accurate and efficient solution for molecular activity and ADMET property prediction, contributing significantly to advanced decision-making in the early stages of drug discovery.
+Discovering molecules with desirable molecular properties, including ADMET (Absorption, Distribution, Metabolism, Excretion, and Toxicity) profiles, is of great importance in drug discovery. Existing approaches typically employ deep learning models, such as Graph Neural Networks (GNNs) and Transformers, to predict these molecular properties by learning from diverse chemical information. However, these models often fail to efficiently capture and utilize the hierarchical nature of molecular structures, and lack mechanisms for effective interaction among multi-level features. To address these limitations, we propose a Hierarchical Interaction Message Passing Mechanism, which serves as the foundation of our novel model, HimNet. Our method enables interaction-aware representation learning across atomic, motif, and molecular levels via hierarchical attention-guided message passing. This design allows HimNet to effectively balance global and local information, ensuring rich and task-relevant feature extraction for downstream property prediction tasks, such as Blood-Brain Barrier Permeability (BBBP). We systematically evaluate HimNet on eleven datasets, including eight widely-used MoleculeNet benchmarks and three challenging, high-value datasets for metabolic stability, malaria activity, and liver microsomal clearance, covering a broad range of pharmacologically relevant properties. Extensive experiments demonstrate that HimNet achieves the best or near-best performance in most molecular property prediction tasks. Furthermore, our method exhibits promising hierarchical interpretability, aligning well with chemical intuition on representative molecules. We believe that HimNet offers an accurate and efficient solution for molecular activity and ADMET property prediction, contributing significantly to advanced decision-making in the early stages of drug discovery.
 
 <div align=center>
 <img src="./images/model.png" alt="TOC" align=center />
@@ -46,7 +42,7 @@ HimNet’s performance was first benchmarked on eight standard MoleculeNet datas
 | GEM | 0.856(0.011) | 0.724(0.004) | 0.781(0.001) | 0.672(0.004) | 0.901(0.013) | 0.798(0.029) | 1.877(0.094) | 0.660(0.008) |
 | ImageMol | 0.839(0.005) | 0.739(0.002) | 0.773(0.001) | 0.660(0.001) | 0.851(0.014) | 0.970(0.070) | 2.020(0.070) | 0.720(0.010) |
 | MolMCL<sub>GIN</sub> | 0.850(0.011) | 0.741(0.006) | 0.775(0.003) | 0.667(0.008) | **0.957(0.012)** | - | - | - |
-| MolMCL<sub>GPS</sub> | 0.861(0.013) | 0.736(0.007) | 0.790(0.006) | 0.687(0.002) | 0.951(0.005) | - | - | - |
+| MolMCL<sub>GPS</sub> | 0.861(0.013) | 0.736(0.007) | 0.790(0.006) | **0.687(0.002)** | 0.951(0.005) | - | - | - |
 | Uni-Mol | 0.857(0.002) | 0.729(0.006) | 0.796(0.005) | 0.659(0.013) | 0.919(0.018) | 0.788(0.029) | 1.480(0.048) | 0.603(0.010) |
 | MESPool | 0.855(0.039) | 0.848(0.046) | 0.787(0.019) | 0.576(0.026) | 0.902(0.065) | 1.276(0.246) | 2.779(0.762) | 0.708(0.042) |
 | HimGNN | 0.856(0.034) | 0.928(0.027) | 0.807(0.017) | 0.642(0.023) | 0.917(0.030) | 0.870(0.154) | 1.921(0.474) | **0.632(0.016)** |
@@ -140,4 +136,3 @@ python main.py \
   --lr 0.0001 \
   --depth 7 \
   --seed 42
->>>>>>> master
