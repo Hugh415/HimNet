@@ -6,8 +6,6 @@ Discovering molecules with desirable molecular properties, including ADMET (Abso
 <img src="./images/model.png" alt="TOC" align=center />
 </div>
 
-<center>  Overview of the model architecture </center>
-
 ## Environment
 
 
@@ -85,7 +83,8 @@ HimNet/
 ├── dataset_splits/ # Dataset splits storage
 │
 ├── images/
-│ └── model.png
+│ ├── model.png
+│ └── freesolv_mol_0.png
 │
 ├── model/ # Model code
 │ ├── init.py
@@ -136,3 +135,34 @@ python main.py \
   --lr 0.0001 \
   --depth 7 \
   --seed 42
+```
+## Visualization
+
+The script accepts the following arguments:
+
+| Argument | Type | Default | Description |
+|----------|------|---------|-------------|
+| `--device` | int | `0` | Which GPU to use (0 for first GPU) |
+| `--model_path` | str | **Required** | Path to trained model weights file (.pth/.pt) |
+| `--dataset` | str | `'freesolv'` | Dataset name for visualization:<br>`bbbp`, `bace`, `sider`, `clintox`,<br>`tox21`, `toxcast`, `esol`, `freesolv`,<br>`lipophilicity`, `cyp450`, `lmc`, `metstab`, `estrogen` |
+| `--data_dir` | str | `'./data/'` | Directory containing input data files |
+| `--all_mols` | flag | `False` | Visualize all molecules in dataset |
+| `--max_mols` | int | `100` | Maximum number of molecules to process (when --all_mols=True) |
+| `--mol_idx` | int | `0` | Specific molecule index to visualize (when --all_mols=False) |
+| `--batch_size` | int | `1` | Batch size for processing (recommend 1 for visualization) |
+| `--save_dir` | str | `'./attention_viz/'` | Directory to save visualization results |
+| `--property_name` | str | `'molecular biology'` | Target property name for display |
+
+
+### Example Usage
+
+```bash
+python visual.py \
+  --model_path ./checkpoints/freesolv.pth \
+  --dataset freesolv \
+  --property_name 'Physicochemical_freesolv'
+```
+### freesolv visualization results
+<div align=center>
+<img src="./images/freesolv_mol_0.png" alt="TOC" align=center />
+</div>
