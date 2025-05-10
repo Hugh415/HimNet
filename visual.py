@@ -12,7 +12,7 @@ from matplotlib.patches import FancyArrowPatch
 import traceback
 import torch
 from torch_geometric.data import DataLoader
-from model import FHGNN
+from model import HimNet
 from dataset import HiMolGraph, MoleculeDataset
 
 
@@ -768,8 +768,8 @@ def visual():
     parser = argparse.ArgumentParser(description='Visualizing the attention of hierarchical molecular maps')
     parser.add_argument('--device', type=int, default=0, help='GPU devices used')
     parser.add_argument('--model_path', type=str, required=True, help='Model Weights File Path')
-    parser.add_argument('--dataset', type=str, default='bbbp', help='Data sets used')
-    parser.add_argument('--data_dir', type=str, default='./dataset/', help='Dataset Catalog')
+    parser.add_argument('--dataset', type=str, default='freesolv', help='Data sets used')
+    parser.add_argument('--data_dir', type=str, default='./data/', help='Dataset Catalog')
     parser.add_argument('--all_mols', action='store_true', help='Whether to visualize all molecules')
     parser.add_argument('--max_mols', type=int, default=100, help='Maximum number of processed molecules')
     parser.add_argument('--mol_idx', type=int, default=0, help='Molecule index to visualize (used when --all_mols is False)')
@@ -809,7 +809,7 @@ def visual():
         raise ValueError("Invalid dataset name.")
     
     print("Create Model...")
-    model = FHGNN(data_name=args.dataset, atom_fdim=89, bond_fdim=98, fp_fdim=6338, 
+    model = HimNet(data_name=args.dataset, atom_fdim=89, bond_fdim=98, fp_fdim=6338, 
                  hidden_size=512, depth=7, device=device, out_dim=num_tasks)
     
     print(f"Loading model weights: {args.model_path}")
