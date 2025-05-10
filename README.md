@@ -88,13 +88,13 @@ HimNet/
 │ └── model.png
 │
 ├── model/ # Model code
-│ ├── init.py # Initialization file
+│ ├── init.py
 │ └── HimNet.py # HimNet model implementation
 │
 ├── model_checkpoints/ # Model checkpoint directory
 │
 └── utils/ # Utility functions
-│ ├── init.py # Initialization file
+│ ├── init.py
 │ ├── dataset_split.py # Dataset splitting tool
 │ └── seed.py # Random seed setting
 ├── eval.py # Evaluation tool
