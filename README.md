@@ -63,44 +63,60 @@ HimNet’s performance was first benchmarked on eight standard MoleculeNet datas
 ## Project document structure
 ```
 HimNet/
-├── best_result/ # Best results record
-├── data/ # Dataset
-│ ├── bace/ 
-│ ├── bbbp/ 
-│ ├── clintox/
-│ ├── esol/
-│ ├── freesolv/
-│ ├── lipophilicity/
-│ ├── sider/
-│ └── tox21/
+├── data/ # Raw dataset storage
+│   ├── bace/
+│   ├── bbbp/
+│   ├── clintox/
+│   ├── cyp450/
+│   ├── esol/
+│   ├── estrogen/
+│   ├── freesolv/
+│   ├── lipophilicity/
+│   ├── lmc/
+│   ├── malaria/
+│   ├── metstab/
+│   ├── sider/
+│   └── tox21/
+│
+├── dataset_splits/ # Preprocessed dataset splits
+│   ├── bace/
+│   ├── bbbp/
+│   ├── clintox/
+│   ├── cyp450/
+│   ├── esol/
+│   ├── estrogen/
+│   ├── freesolv/
+│   ├── lipophilicity/
+│   ├── lmc/
+│   ├── malaria/
+│   ├── metstab/
+│   ├── sider/
+│   └── tox21/
 │
 ├── dataset/ # Dataset processing code
-│ ├── init.py
-│ ├── featurization.py # Feature engineering
-│ ├── loader.py # Data loader
-│ └── splitters.py # Data splitters
-│
-├── dataset_splits/ # Dataset splits storage
+│   ├── __init__.py
+│   ├── featurization.py  # Feature engineering
+│   ├── loader.py        # Data loader
+│   └── splitters.py     # Data splitters
 │
 ├── images/
-│ ├── model.png
-│ └── freesolv_mol_0.png
+│   ├── model.png
+│   └── freesolv_mol_0.png
 │
 ├── model/ # Model code
-│ ├── init.py
-│ └── HimNet.py # HimNet model implementation
-│
-├── model_checkpoints/ # Model checkpoint directory
+│   ├── __init__.py
+│   └── HimNet.py       # HimNet model implementation
 │
 └── utils/ # Utility functions
-│ ├── init.py
-│ ├── dataset_split.py # Dataset splitting tool
-│ └── seed.py # Random seed setting
-├── eval.py # Evaluation tool
-├── main.py # Main program entry
-├── README.md # Project description
-├── train.py # Training code
-└── visual.py # Visualization tool
+│   ├── __init__.py
+│   ├── dataset_split.py  # Dataset splitting tool
+│   └── seed.py          # Random seed setting
+│
+├── eval.py            # Evaluation tool
+├── main.py            # Main program entry
+├── README.md          # Project description
+├── train.py           # Training code
+└── visual.py          # Visualization tool
 ```
 
 ## Training 
@@ -136,6 +152,7 @@ python main.py \
   --depth 7 \
   --seed 42
 ```
+**NOTE**: Before running the code, you need to create the `best_result/` and `model_checkpoints/` directories in the current working directory to record the best performance results and save model weights, respectively.
 ## Visualization
 
 The script accepts the following arguments:
