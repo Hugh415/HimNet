@@ -113,7 +113,7 @@ The script accepts the following arguments:
 | `--batch_size` | int | `64` | Input batch size for training |
 | `--epochs` | int | `100` | Number of training epochs |
 | `--lr` | float | `0.0001` | Learning rate |
-| `--dataset` | str | `'bbbp'` | Dataset name:tox21, bace, bbbp, sider, clintox, esol, freesolv, lipophilicity, cyp450, lmc, metstab, estrogen, malaria |
+| `--dataset` | str | `'bbbp'` | Dataset name:`tox21`, `bace`, `bbbp`, `sider`, `clintox`, `esol`, `freesolv`, `lipophilicity`, `cyp450`, `lmc`, `metstab`, `estrogen`, `malaria`  |
 | `--data_dir` | str | `'./data/'` | Directory containing input data files |
 | `--save_dir` | str | `'./model_checkpoints'` | Directory to save trained models |
 | `--depth` | int | `7` | Depth of molecular graph encoder |
@@ -144,7 +144,7 @@ The script accepts the following arguments:
 |----------|------|---------|-------------|
 | `--device` | int | `0` | Which GPU to use (0 for first GPU) |
 | `--model_path` | str | **Required** | Path to trained model weights file (.pth/.pt) |
-| `--dataset` | str | `'freesolv'` | Dataset name for visualization:'tox21', bace, bbbp, sider, clintox, esol, freesolv, lipophilicity, cyp450, lmc, metstab, estrogen, malaria |
+| `--dataset` | str | `'freesolv'` | Dataset name for visualization:`tox21`, `bace`, `bbbp`, `sider`, `clintox`, `esol`, `freesolv`, `lipophilicity`, `cyp450`, `lmc`, `metstab`, `estrogen`, `malaria` |
 | `--data_dir` | str | `'./data/'` | Directory containing input data files |
 | `--all_mols` | flag | `False` | Visualize all molecules in dataset |
 | `--max_mols` | int | `100` | Maximum number of molecules to process (when --all_mols=True) |
