@@ -144,7 +144,7 @@ The script accepts the following arguments:
 |----------|------|---------|-------------|
 | `--device` | int | `0` | Which GPU to use (0 for first GPU) |
 | `--model_path` | str | **Required** | Path to trained model weights file (.pth/.pt) |
-| `--dataset` | str | `'freesolv'` | Dataset name for visualization:tox21, bace, bbbp, sider, clintox, esol, freesolv, lipophilicity, cyp450, lmc, metstab, estrogen, malaria |
+| `--dataset` | str | `'freesolv'` | Dataset name for visualization:'tox21', bace, bbbp, sider, clintox, esol, freesolv, lipophilicity, cyp450, lmc, metstab, estrogen, malaria |
 | `--data_dir` | str | `'./data/'` | Directory containing input data files |
 | `--all_mols` | flag | `False` | Visualize all molecules in dataset |
 | `--max_mols` | int | `100` | Maximum number of molecules to process (when --all_mols=True) |
