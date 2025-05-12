@@ -175,7 +175,8 @@ python visual.py \
   --dataset freesolv \
   --property_name 'Physicochemical_freesolv'
 ```
-### freesolv visualization results
+### Visualization Example
+We performed a hierarchical attention analysis on the molecule CN(C)C(=O)c1ccc(cc1)OC (a sample from the FreeSolv dataset), demonstrating the interpretability of our model in molecular property prediction.
 <div align=center>
 <img src="./images/freesolv_mol_0.png" alt="TOC" align=center />
 </div>

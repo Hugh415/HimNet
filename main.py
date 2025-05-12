@@ -22,7 +22,7 @@ def main():
     parser.add_argument('--batch_size', type=int, default=64, help='input batch size for training')
     parser.add_argument('--epochs', type=int, default=100, help='number of epochs to train (default: 100)')
     parser.add_argument('--lr', type=float, default=0.0001, help='learning rate for the prediction layer')
-    parser.add_argument('--dataset', type=str, default = 'bbbp', help='[bbbp, bace, sider, clintox,tox21, toxcast, esol,freesolv,lipophilicity,cyp450,lmc,metstab,estrogen]')
+    parser.add_argument('--dataset', type=str, default = 'bbbp', help='[bbbp, bace, sider, clintox,tox21, toxcast, esol,freesolv,lipophilicity,lmc,metstab]')
     parser.add_argument('--data_dir', type=str, default='./data/', help = "the path of input CSV file")
     parser.add_argument('--save_dir', type=str, default='./model_checkpoints', help = "the path to save output model")
     parser.add_argument('--depth', type=int, default=7, help = "the depth of molecule encoder")
@@ -46,7 +46,7 @@ def main():
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(args.runseed)
 
-    if args.dataset in ['tox21', 'bace', 'bbbp', 'sider', 'clintox', 'cyp450', 'metstab', 'estrogen']:
+    if args.dataset in ['tox21', 'bace', 'bbbp', 'sider', 'clintox', 'metstab']:
         task_type = 'cls'
     else:
         task_type = 'reg'
@@ -68,14 +68,10 @@ def main():
         num_tasks = 1
     elif args.dataset == 'lipophilicity':
         num_tasks = 1
-    elif args.dataset == 'cyp450':
-        num_tasks = 5
     elif args.dataset == 'lmc':
         num_tasks = 1
     elif args.dataset == 'metstab':
         num_tasks = 2
-    elif args.dataset == 'estrogen':
-        num_tasks = 1
     elif args.dataset == 'malaria':
         num_tasks = 1
     else:
