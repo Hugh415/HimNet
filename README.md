@@ -99,9 +99,18 @@ HimNet/
 │   ├── model.png
 │   └── freesolv_mol_0.png
 │
-├── model/ # Model code
+├── model/               # Model code
 │   ├── __init__.py
-│   └── HimNet.py       # HimNet model implementation
+│   ├── HimNet.py        # HimNet model implementation
+│   └── module/
+│       ├── __init__.py
+│       ├── CommonFeatureExtractor.py
+│       ├── EnhancedFusionModule.py
+│       ├── ExplainableCrossAttention.py
+│       ├── ExplainableCrossAttentionEncoder.py
+│       ├── HGNNEncoder.py
+│       └── MultiHeadAttentionFusion.py
+│
 │
 └── utils/ # Utility functions
 │   ├── __init__.py
